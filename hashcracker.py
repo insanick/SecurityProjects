@@ -12,9 +12,10 @@ def md(tgt):
     ## Cracking an MD5 hash
     res = ''
     h = hashlib.md5(tgt.encode()).hexdigest()
+    f = input('Enter the wordlist location: ')
     try:
         #Opens the wordlist file
-        with open('test.txt', 'r') as s:
+        with open(f, 'r') as s:
             for line in s:
                 comp = hashlib.md5(line.strip().encode()).hexdigest()
                 print(f'Now testing {line}\n {h}:{comp}\n\n')
