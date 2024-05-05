@@ -76,24 +76,6 @@ fn generate_password(passes: u8) {
 
     println!("{password}");
 }
-
-fn rerun() {
-
-    println!("Do you want to go again? (Y/y to go again)");
-    let mut response: String = String::new();
-    io::stdin().read_line(&mut response).expect("Could not read line");
-    
-    let response = response.trim().to_string();
-    
-
-    if (response == String::from("y")) || (response == String::from("Y")) {
-        main();
-    } else {
-        println!("Goodbye...");
-    }
-}
-
 fn main() {
     generate_password(get_password_length());
-    rerun();
 }
